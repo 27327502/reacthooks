@@ -12,9 +12,19 @@ import AddMovie from "./AddMovie";
 
 const Header = ({ handleFilter, handleAddMovie, handleRating }) => {
   return (
-    <Navbar bg="light" expand="lg" style={{ marginBottom: "25px" }}>
+    <Navbar
+      bg="light"
+      expand="lg"
+      style={{
+        marginBottom: "25px",
+        backgroundImage:
+          "url(https://previews.123rf.com/images/kostsov/kostsov2005/kostsov200500070/146736557-play-movie-icon-cinema-projector-on-tropic-leaves-background-online-app-for-watching-tv-series-and-m.jpg)",
+      }}
+    >
       <Container>
-        <Navbar.Brand href="#home">Movie App</Navbar.Brand>
+        <Navbar.Brand href="#home" style={{ color: "white" }}>
+          Movie App
+        </Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Form.Control
@@ -25,9 +35,7 @@ const Header = ({ handleFilter, handleAddMovie, handleRating }) => {
           />
           &nbsp; &nbsp; &nbsp;
           <StarRatingComponent
-            onStarClick={(nextValue, prevValue, name) =>
-              handleRating(nextValue)
-            }
+            onStarClick={(nextValue, prevValue) => handleRating(nextValue)}
           />
         </Navbar.Collapse>
         <AddMovie handleAddMovie={handleAddMovie} />
